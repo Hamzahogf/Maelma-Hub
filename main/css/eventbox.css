@@ -1,0 +1,121 @@
+
+.clubs-section {
+  margin-top: 8em;
+}
+
+.filter, .contents{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px 0;
+  }
+.filter::after, .contents::after{
+  width: 350px;
+  content: "";
+}
+.single::after{
+  display: none;
+}
+.container-events{
+  margin: 50px auto;
+}
+.box-container{
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+  margin-bottom: 30px;
+  align-self: center;
+  }
+.box-container{
+  height: 350px;
+  border-radius: 30px;
+  background-color: #e7e9f2;
+  padding: 30px 20px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  transition: 0.2s transform ease;
+}
+.box-container:hover{
+  background-color: rgb(201, 203, 225);
+  border: 2px solid #007bff;
+  transform: translateY(-10px)
+}
+.box-logo{
+  object-fit: contain;
+  height: 100px;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 5px;
+}
+.boxtitle{
+  font-size: 1.4rem;
+  text-align: center;
+  color: rgb(72,89,168);
+  padding-bottom: 20px;
+}
+.details{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 15px;
+  padding-bottom: 15px;
+  color: rgb(92, 92, 92);
+}
+.indice{
+  align-self: center;
+  margin: 0 0.5rem 0 0;
+  vertical-align: middle;
+  width: 20px;
+}
+.event-register{
+  position: absolute;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 15px 20px;
+  background-color: #fff;
+  color: rgb(72,89,168);
+  border: 2px solid rgb(72,89,168);
+  font-weight: bold;
+  border-radius: 25px;
+  width: 130px;
+  text-align: center;
+  vertical-align: middle;
+  bottom: -25px;
+  transition: 0.1s all linear;
+}
+.event-register:hover{
+  transform: scale(1.1);
+}
+.interest img{
+  filter: invert(31%) sepia(46%) saturate(895%) hue-rotate(193deg) brightness(98%) contrast(85%);
+}
+
+
+
+
+@media (max-width: 768px) {
+  .box-container{
+    width: 85%;
+    max-width: 100%;
+    margin-bottom: 30px;
+    height: 350px;
+  }
+  .box-logo{
+    max-width: unset;
+  }
+  .details{
+    width: 90%;
+  }
+  .event-register{
+    width: 150px;
+  }
+}

@@ -1,0 +1,228 @@
+/* Basic Navbar Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-size: 16px;
+    width: 100%;
+    font-family: Poppins, sans-serif;
+    padding: 0;
+}
+
+.navbar {
+  width: 100%;
+  margin: auto;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5d5;
+  padding: 1rem  1.5rem;
+  color: #000;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar-brand {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.navbar-links a:hover{
+  border-bottom-color:black;
+}
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#loginsmall{
+  display: none;
+}
+
+.navbar-links li {
+  margin-left: 1.5rem;
+}
+
+.navbar-links a {
+  border-bottom: 3px solid transparent;
+  color: rgb(72,89,168);
+  text-decoration: none;
+  padding: 1.4rem 1rem;
+  text-align: center;
+}
+
+.navbar-login{
+  display: block;
+  padding: 1rem 1rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  background-color: rgb(72, 89, 168);
+  text-decoration: none;
+  transition: 0.2s all ease;
+  margin-left: 1.5rem;
+}
+.navbar-login{
+  transform: scale(1.1);
+}
+.navbar-login:hover{
+  transform: scale(1.1);
+}
+
+
+/* Toggle Button (hidden by default) */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: rgb(72, 89, 168);
+  cursor: pointer;
+}
+
+/* Footer General Styling */
+.site-footer {
+  background-color: rgb(72, 89, 168);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Footer Links */
+.footer-links {
+  margin-bottom: 13px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.footer-links a:hover {
+  color: #18bc9c;
+  text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-bottom: 13.5px; /* Add more spacing if needed */
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center; /* Center the icons in the footer */
+  gap: 15px; /* Space between each icon */
+}
+
+.wiw {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.wiw svg, 
+.social-icons img {
+  width: 18px;
+  height: 18px;
+  fill: white; /* For consistent icon coloring */
+  vertical-align: middle; /* Ensures SVGs and images align */
+}
+
+.social-icons img {
+ position: absolute;
+ right: 100px;/* Ensure QR code is prominently displayed */
+}
+
+.wiw a {
+  color: white;
+  font-size: 18px;
+}
+
+.social-icons a:hover {
+  color: #18bc9c;
+}
+
+/* Copyright Section */
+.footer-copyright {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 900px){
+  .navbar{
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .navbar{
+    width: 100%;
+    height: unset;
+  }
+  .navbar-login{
+    display: none;
+  }
+  #loginsmall{
+    display: block;
+  }
+  .navbar-links{
+    display: none; /* Hide links and login button by default */
+    position: absolute;
+    z-index: 100;
+    top: 100%; /* Position dropdown below navbar */
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    background-color: #f5f5f5d5;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar-links li{
+    padding: 10px;
+  }
+  .navbar-links li a{
+    border: none;
+    font-weight: bold;
+  }
+
+  .navbar-links.show{
+    display: flex; /* Show both links and login button when toggled */
+
+  }
+
+  .navbar-login {
+    margin-top: 1rem; /* Adds spacing for login button in dropdown */
+  }
+
+  .navbar-toggle {
+    display: block; /* Show toggle button on small screens */
+  }
+
+
+  /* Social Icons */
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    position: static;
+  }
+  
+  .social-icons img {
+    position: static;
+  }
+
+   
+}
