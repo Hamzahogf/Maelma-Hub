@@ -11,6 +11,8 @@ body {
 .news{
     width: 100%;
     margin: 20px auto 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card {
@@ -173,5 +175,9 @@ hr {
 
     .icon-text {
         display: inline;
+    }
+    .blogtitle{
+        width: 90%;
+        margin: auto;
     }
 }

@@ -10,7 +10,7 @@ function toggleMenu() {
 }
 
 window.addEventListener("scroll", function() {
-  const header = document.querySelector(".navbar");
+  const header = document.querySelector("header");
   if (window.scrollY > 50) {  // Change 50 to the amount of scroll you prefer
       header.style.backgroundColor = "#ffffffee"; // Set to white on scroll
   } else {

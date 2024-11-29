@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/eventbox.css">
-    <script src="../js/navbar.js"></script>
+    <script src="../js/navbar.js" defer></script>
     <script src="../js/slider.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-  <?php include './navbar.php'; ?>
+  <?php include 'navbar.php'; ?>
 
     <section class="first">
         <div class="text">
@@ -24,13 +25,10 @@
       <div class="container" >
           <h1 class="align-center">Recently Added</h1>
       </div>
-      <div class="slider-controls" >
-        <button class="prev">❮</button>
-        <button class="next">❯</button>
-      </div>
-      <div class="container1">
+      <div class="containerslide">
+          <button class="prev">❮</button>
           <div class="contents1" >
-            <div class="box-list"style="display: flex; justify-content: space-between;gap: 16px;">
+            <div class="box-list">
                 <div class="box-container">
                   <img src="img/events_logo/636.png" alt="logo" class="box-logo">
                   <div class="boxtitle">IGNITE the new amazing event</div>
@@ -93,6 +91,7 @@
                 </div>    
           </div>
       </div>
+      <button class="next">❯</button>
     </div> 
    
   </section>
@@ -148,7 +147,7 @@
       </div>
     </section>
     
-    <?php include './footer.php'; ?>
+    <?php include 'footer.php'; ?>
 
     
 

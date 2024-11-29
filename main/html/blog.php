@@ -14,7 +14,7 @@
     <body>
     <?php include './navbar.php'; ?>
 
-          <div style="margin: 8em auto; text-align: center;">
+          <div style="margin: 8em auto; text-align: center;" class="blogtitle">
             <h1>Always stay informed</h1>
             <p style="margin: auto;">Keep an eye on everything that's happening in our technological pole </p>
           </div>

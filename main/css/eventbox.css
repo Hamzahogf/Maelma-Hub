@@ -2,12 +2,18 @@
 .clubs-section {
   margin-top: 8em;
 }
+.container-events{
+  margin: auto;
+  width: 80%;
+  max-width: 1200px;
+}
 
 .filter, .contents{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
+    margin: auto auto;
     justify-content: center;
     gap: 25px;
     padding: 20px 0;
@@ -25,7 +31,6 @@
 .box-container{
   width: 100%;
   max-width: 350px;
-  position: relative;
   margin-bottom: 30px;
   align-self: center;
   }
@@ -103,10 +108,14 @@
 
 
 @media (max-width: 768px) {
+  .container-events{
+    width: 100%;
+  }
   .box-container{
     width: 85%;
     max-width: 100%;
     margin-bottom: 30px;
+    margin: 0 30px 30px;
     height: 350px;
   }
   .box-logo{

@@ -1,11 +1,11 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    const contents = document.querySelector(".contents1");
+    const contents = document.querySelector(".box-list");
     const boxes = document.querySelectorAll(".box-container");
     let index = 0;
 
     function slide(direction) {
-      const boxWidth = boxes[0].offsetWidth + 16; // Box width + gap
+      const boxWidth = boxes[0].offsetWidth + 20; // Box width + gap
       const visibleBoxes = Math.floor(contents.parentElement.offsetWidth / boxWidth);
       const maxIndex = boxes.length - visibleBoxes;
 

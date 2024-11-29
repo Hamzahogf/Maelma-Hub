@@ -1,6 +1,6 @@
 <!-- footer.php -->
 <head>
-    <base href="http://localhost/Maalme_Hub/Maelma_Hub/">
+    <base href="/BEHIND_THE_SCENES/main/">
 </head>
 
 <footer class="site-footer">
