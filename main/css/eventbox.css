@@ -2,10 +2,15 @@
 .clubs-section {
   margin-top: 8em;
 }
+body{
+  display: flex;
+  flex-direction: column;
+}
 .container-events{
   margin: auto;
   width: 80%;
   max-width: 1200px;
+  flex: 1;
 }
 
 .filter, .contents{

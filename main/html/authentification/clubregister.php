@@ -12,7 +12,7 @@
 </head>
 <body>
     <?php include '../navbar.php'; ?>
-
+    <div class="main">
     <div class="container">
         <h1 class="title">Club Register</h1>
         <p class="title">WELCOME</p>
@@ -46,6 +46,7 @@
         <div class="links notnav">
             <a href="/login.php">Already have an Account?</a>
         </div>
+    </div>
     </div>
     <?php include '../footer.php'; ?>
 

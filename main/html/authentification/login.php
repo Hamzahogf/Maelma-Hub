@@ -9,10 +9,10 @@
     <script src="../../js/Form_validation.js"></script>
     <title>Document</title>
 </head>
-<body style="display: flex; flex-direction: column; min-height: 100vh;">
+<body>
 <?php include '../navbar.php'; ?>
-
-    <div class="container" style="flex: 1;">
+    <div class="main">
+    <div class="container">
         <h1 class="title">Log In</h1>
         <p class="title">WELCOME</p>
         <div class="form">
@@ -30,6 +30,7 @@
             <a href="html/authentification/signup.php">Create Account</a>
             <a href="html/authentification/forgotpass.php">Forgot Password?</a>
         </div>
+    </div>
     </div>
     <?php include '../footer.php'; ?>
 

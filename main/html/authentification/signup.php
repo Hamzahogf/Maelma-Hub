@@ -11,7 +11,7 @@
 </head>
 <body>
     <?php include '../navbar.php'; ?>
-
+    <div class="main">
     <div class="container">
         <h1 class="title">Sign Up</h1>
         <p class="title">WELCOME</p>
@@ -45,6 +45,7 @@
             <a href="html/authentification/login.php">Already have an Account?</a>
             <a href="html/authentification/clubregister.php">Register as a club</a>
         </div>
+    </div>
     </div>
     <?php include '../footer.php'; ?>
 

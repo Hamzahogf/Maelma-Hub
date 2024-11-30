@@ -13,8 +13,8 @@
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
 
   <?php include '../navbar.php'; ?>
-
-    <div class="container" style="flex: 1;">
+    <div class="main">
+    <div class="container">
         <h1 class="title">Recover Password</h1>
         <p class="title">Get back access to your account</p>
         <div class="form">
@@ -36,6 +36,7 @@
                 <input type="text" maxlength="1">
             </div>
         </div>
+    </div>
     </div>
     <?php include '../footer.php'; ?>
 

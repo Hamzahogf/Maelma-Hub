@@ -8,6 +8,12 @@ body{
    /* background-color: rgb(72,89,168); */
     background: #f5f5f5;
     font-family: Poppins, sans-serif;
+    display: flex; 
+    flex-direction: column; 
+    justify-content:center;
+}
+.main{
+    flex: 1;
 }
 .links{
     display: flex;

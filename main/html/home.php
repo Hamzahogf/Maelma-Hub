@@ -12,7 +12,7 @@
 </head>
 <body>
   <?php include 'navbar.php'; ?>
-
+  <div class="main">
     <section class="first">
         <div class="text">
             <h1 class="align-center">Maelma Hub</h1>
@@ -146,7 +146,7 @@
         </form>
       </div>
     </section>
-    
+    </div>
     <?php include 'footer.php'; ?>
 
     
