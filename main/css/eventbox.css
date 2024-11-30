@@ -1,16 +1,20 @@
 
 .clubs-section {
-  margin-top: 8em;
+  margin-top: 10em;
+
 }
 body{
   display: flex;
   flex-direction: column;
 }
+.main{
+  flex: 1;
+}
 .container-events{
   margin: auto;
   width: 80%;
   max-width: 1200px;
-  flex: 1;
+ 
 }
 
 .filter, .contents{
@@ -21,7 +25,7 @@ body{
     margin: auto auto;
     justify-content: center;
     gap: 25px;
-    padding: 20px 0;
+    padding: 10px 0;
   }
 .filter::after, .contents::after{
   width: 350px;
@@ -31,7 +35,7 @@ body{
   display: none;
 }
 .container-events{
-  margin: 50px auto;
+  margin: 20px auto;
 }
 .box-container{
   width: 100%;
@@ -52,6 +56,12 @@ body{
   position: relative;
   transition: 0.2s transform ease;
 }
+.box-container{
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
 .box-container:hover{
   background-color: rgb(201, 203, 225);
   border: 2px solid #007bff;
@@ -108,7 +118,18 @@ body{
 .interest img{
   filter: invert(31%) sepia(46%) saturate(895%) hue-rotate(193deg) brightness(98%) contrast(85%);
 }
+.clicked {
+  animation: bounce 0.3s ease;
+}
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
 
 

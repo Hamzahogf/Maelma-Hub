@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/eventbox.css">
     <script src="../js/navbar.js"></script>
-
+    <script src="../js/eventbox_entrance.js" defer></script>
     <title>Document</title>
 </head>
 <body>
 <?php include './navbar.php'; ?>
-    
+    <div class="main">
     <div class="clubs-section">
       <h1>Get to join our clubs</h1>
       <p class="align-center">You get to join the clubs of our technological pole </p>
@@ -85,7 +85,7 @@
           </div>
         </div>
     </div>
-
+    </div>
     <?php include './footer.php'; ?>
 </body>
 </html>

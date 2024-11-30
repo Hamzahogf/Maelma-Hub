@@ -8,13 +8,14 @@
         <title>Add an Event</title>
         <link rel="stylesheet" href="../css/Club_Card.css" type="text/css">
         <script src="../js/navbar.js"></script>
-
+        <!--<script src="../js/blogcard_entrance.js" defer></script>
+-->
     </head>
 
     <body>
     <?php include './navbar.php'; ?>
     <div class="main">
-          <div style="margin: 8em auto; text-align: center;" class="blogtitle">
+          <div style="margin: 8em auto 1em; text-align: center;" class="blogtitle">
             <h1>Always stay informed</h1>
             <p style="margin: auto;">Keep an eye on everything that's happening in our technological pole </p>
           </div>

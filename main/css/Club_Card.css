@@ -29,11 +29,31 @@ body {
     margin: auto;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 5%;
+    margin-top: 50px;
 }
+
+
+/* Initial Staggered Entrance */
+.card {
+    opacity: 0;
+    transform: translateX(350px);
+    animation: entrance 1s ease forwards;
+  }
+  .card:nth-child(1) { animation-delay: 0s; }
+  .card:nth-child(2) { animation-delay: 0.2s; }
+  .card:nth-child(3) { animation-delay: 0.4s; }
+  
+  /* Hover Animation */
+  @keyframes entrance {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
 .news .card:hover{
     transform: translateY(-15px);
-    transition: 0.2s all ease-in-out;
+    transition: 0.2s transform ease;
 }
 .block {
     display: flex;

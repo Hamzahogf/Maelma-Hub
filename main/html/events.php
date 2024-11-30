@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/eventbox.css">
-    <script src="../js/navbar.js"></script>
-
+    <base href="/BEHIND_THE_SCENES/main/">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/eventbox.css">
+    <script src="js/navbar.js"></script>
+    <script src="js/eventbox_entrance.js" defer></script>
+   
     <title>Document</title>
 </head>
 <body>
   
   <?php include './navbar.php'; ?>
-  
-    <div class="container-events" style="margin-top: 7em;">
-        <div class="filter">
+  <div class="main">
+    <div class="clubs-section">
+        <h1>Browse our latest events!</h1>
+        <p class="align-center">You get to join the clubs of our technological pole </p>
+      </div>
+    <div class="container-events" style="margin-top: 1em;">
+        <div class="filter single">
         <div class="input-container">
             <select id="options" class="floating-select" required>
               <option value="" selected></option>
@@ -102,14 +108,23 @@
               <div class="location box"><img src="img/location.svg" alt="" class="indice"><span>ENSIA</span></div>
               <div class="date box"><img src="img/date.svg" alt="" class="indice"><span>26 Oct 2024</span></div>
             </div>
-            <a class="event-register" href="eventoverview.php">Join Now</a>
+            <a class="event-register" href="html/eventoverview.php">Join Now</a>
           </div>
 
           
         </div>
     </div>
-
+    </div>
     <?php include './footer.php'; ?>
 
 </body>
+<script>
+  document.querySelectorAll(".event-register").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.classList.add("clicked");
+      setTimeout(() => btn.classList.remove("clicked"), 300); // Remove after animation
+    });
+  });
+  
+</script>
 </html>
