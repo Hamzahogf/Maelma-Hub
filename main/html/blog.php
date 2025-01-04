@@ -60,25 +60,6 @@
                   </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="block">
-                    <div class="left">
-                        <img src="img/blog/blogsample2.jpg" alt="description" width="100%" height="100%">
-                    </div>
-                    <div class="stmt">
-                    <div class="content">
-                        <h2>India President visit</h2>
-                        <p>This monday, the president of India Droupadi Murmu paid visit to the Technological Pole Of Sidi Abdellah.</p>
-                    </div>
-                    <div class="detailes">
-                            <p>by : Donald Trump</p>
-                            <p>5 comments</p>
-                            <p> 5/20/2024</p>
-                         <button class="join-btn">Read more</button>
-                    </div>
-                  </div>
-                </div>
-            </div>
     </div>
     </div>
     <script>
