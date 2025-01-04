@@ -4,6 +4,8 @@ var passwd = document.getElementById("password")
 var frm1 = document.getElementsByClassName("frm1")[0]
 var frm2=document.getElementsByClassName("frm2")[0]
 var frm3=document.getElementsByClassName("frm3")[0]
+var frm4=document.getElementsByClassName("frm4")[0]
+var frm5=document.getElementsByClassName("frm5")[0]
 var passwdconditions = new Array(4).fill(false)
 var passwdconditionsmessages= new Array(4).fill("")
 var errmail = false
@@ -24,8 +26,7 @@ if(passwd){
     })
 }
 
-
-Email.addEventListener("blur", function() {
+if(Email){ Email.addEventListener("blur", function() {
     let content_email = Email.value.trim()
     if (!isEmail(content_email)) {
         PromptError(Email, "Not a Valid email*")
@@ -35,6 +36,7 @@ Email.addEventListener("blur", function() {
     }
 })
 
+}
 if(Url){
     Url.addEventListener("blur", function() {
         let content_link = Url.value.trim()
@@ -71,6 +73,23 @@ function PromptError(input, msg='') {
         }
         input.parentNode.style.setProperty('margin-bottom', '5px', 'important'); 
         ul.style.marginBottom= '10px'
+        if(frm5){
+            ul.style.position='relative'
+            ul.style.right='6em'
+            if(window.innerWidth <= 430){
+                ul.style.right='1.5em'
+            }
+            else if(window.innerWidth <=511){
+                ul.style.right='3em'
+            }
+            else if(window.innerWidth <=524){
+                ul.style.right='3.8em'
+            } else if(window.innerWidth <=660){
+                ul.style.right='4.2em'
+            } 
+            input.parentNode.parentNode.insertAdjacentElement('afterend', ul);
+            return;
+        }
         input.parentNode.insertAdjacentElement('afterend', ul);
         return
     }
@@ -126,7 +145,8 @@ function PromptSucces(input) {
 document.getElementById("submit-btn").onclick=function(event) {
     event.preventDefault()
     if(frm1){
-        if (errmail && errurl) {
+        if (errurl) {
+
             setTimeout(function() {
                 frm1.submit();
             }, 1000); // 1-second delay before submitting
@@ -135,16 +155,27 @@ document.getElementById("submit-btn").onclick=function(event) {
         if (errmail && errpasswd) {
             setTimeout(function() {
                 frm2.submit();
-            }, 1000); // 1-second delay before submitting
+            }, 1000); 
         }
     } if(frm3){
         if(errmail){
             setTimeout(function() {
                 frm3.submit();
-            }, 1000); // 1-second delay before submitting
+            }, 1000); 
+        }
+    } if(frm4){
+        if(errmail){
+            setTimeout(function() {
+                frm4.submit();
+            }, 1000); 
+        }
+    }  if(frm5){
+        if(errpasswd){
+            setTimeout(function() {
+                frm5.submit();
+            }, 1000); 
         }
     }
-    
 }
 
 function ispasswd(password){ 
@@ -152,37 +183,37 @@ function ispasswd(password){
 
     if (password.toString().length >= 6) {
         passwdconditions[0] = true
-        passwdconditionsmessages[0] = "at least 6 characters."
+        passwdconditionsmessages[0] = "at least 6 char."
     } else {
         passwdconditions[0] = false
-        passwdconditionsmessages[0] = "at least 6 characters."
+        passwdconditionsmessages[0] = "at least 6 char."
         bool = false
     }
 
     if (/[A-Za-z]/.test(password)) {
         passwdconditions[1] = true
-        passwdconditionsmessages[1] = "at least 1 alphabetic characters."
+        passwdconditionsmessages[1] = "at least 1 alphabetic ."
     } else {
         passwdconditions[1] = false
-        passwdconditionsmessages[1] = "at least 1 alphabetic characters."
+        passwdconditionsmessages[1] = "at least 1 alphabetic ."
         bool = false
     }
 
     if (/\d/.test(password)){  
         passwdconditions[2] = true
-        passwdconditionsmessages[2] = "at least 1 numeric characters."
+        passwdconditionsmessages[2] = "at least 1 numeric ."
     } else {
         passwdconditions[2] = false
-        passwdconditionsmessages[2] = "at least 1 numeric characters."
+        passwdconditionsmessages[2] = "at least 1 numeric ."
         bool = false
     }
 
     if (/[@\/\*\-._%£\^]/.test(password)) {
         passwdconditions[3] = true
-        passwdconditionsmessages[3] = "at least 1 special characters."
+        passwdconditionsmessages[3] = "at least 1 special char."
     } else {
         passwdconditions[3] = false
-        passwdconditionsmessages[3] = "at least 1 special characters."
+        passwdconditionsmessages[3] = "at least 1 special char."
         bool = false
     }
     return bool
@@ -195,5 +226,3 @@ function isEmail(Email) {
 function isUrl(link) { 
     return  /^(https?:\/\/)(www\.)?([a-zA0-9_\-]+)\.[a-zA-Z]{2,5}(\.[a-zA-Z]{2,3})?$/.test(link);
 } 
-
-

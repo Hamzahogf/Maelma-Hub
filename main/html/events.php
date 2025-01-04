@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/BEHIND_THE_SCENES/main/">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/eventbox.css">
-    <script src="js/navbar.js"></script>
-    <script src="js/eventbox_entrance.js" defer></script>
-   
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/eventbox.css">
+    <script src="../js/navbar.js" defer></script>
+    <?php 
+     include '../php/events_setup.php'; 
+     include '../php/navbar_setup.php'; 
+    ?>
+    <script src="../js/events.js" defer></script>
+
+
+    <title>Events</title>
 </head>
 <body>
   
@@ -22,109 +26,59 @@
     <div class="container-events" style="margin-top: 1em;">
         <div class="filter single">
         <div class="input-container">
-            <select id="options" class="floating-select" required>
-              <option value="" selected></option>
-              <option value="option1">ENSIA</option>
-              <option value="option2">NHSM</option>
-              <option value="option3">ENSSA</option>
-            </select>
-            <label for="options" class="floating-label">School</label>
-        </div>
-        <div class="input-container">
-            <select id="options" class="floating-select" required>
-              <option value="" selected></option>
-              <option value="option1">Mobius</option>
-              <option value="option2">ETC</option>
-              <option value="option3">EBEC</option>
-            </select>
-            <label for="options" class="floating-label">Club</label>
-        </div>
-        <div class="input-container">
-            <select id="options" class="floating-select" required>
-              <option value="" selected></option>
-              <option value="option1">Hackathons</option>
-              <option value="option2">Workshops</option>
-              <option value="option3">Other</option>
-            </select>
-            <label for="options" class="floating-label">Type of event</label>
-        </div>
-        </div>
-        <div class="contents">
-          <div class="box-container">
-            <img src="img/events_logo/636.png" alt="logo" class="box-logo">
-            <div class="boxtitle">Visit to Bomar factory</div>
-            <div class="details">
-              <div class="organizer box"><img src="img/organizer.svg" alt="" class="indice"><span>ENSIA Administration</span></div>
-              <div class="location box"><img src="img/location.svg" alt="" class="indice"><span>Bomar enterprise</span></div>
-              <div class="date box"><img src="img/date.svg" alt="" class="indice"><span>12 Oct 2024</span></div>
-            </div>
-            <a class="event-register" href="eventoverview.php">Join Now</a>
-          </div>
-          <div class="box-container">
-            <img src="img/clubs_logo/ebec.jpg" alt="logo" class="box-logo">
-            <div class="boxtitle">IGNITE</div>
-            <div class="details">
-              <div class="organizer box"><img src="img/organizer.svg" alt="" class="indice"><span>Ebec club</span></div>
-              <div class="location box"><img src="img/location.svg" alt="" class="indice"><span>ENSIA</span></div>
-              <div class="date box"><img src="img/date.svg" alt="" class="indice"><span>26 Oct 2024</span></div>
-            </div>
-            <a class="event-register" href="eventoverview.php">Join Now</a>
-          </div>
-          <div class="box-container">
-            <img src="img/clubs_logo/ebec.jpg" alt="logo" class="box-logo">
-            <div class="boxtitle">IGNITE</div>
-            <div class="details">
-              <div class="organizer box"><img src="img/organizer.svg" alt="" class="indice"><span>Ebec club</span></div>
-              <div class="location box"><img src="img/location.svg" alt="" class="indice"><span>ENSIA</span></div>
-              <div class="date box"><img src="img/date.svg" alt="" class="indice"><span>26 Oct 2024</span></div>
-            </div>
-            <a class="event-register" href="eventoverview.php">Join Now</a>
-          </div>
-          <div class="box-container">
-            <img src="img/clubs_logo/ebec.jpg" alt="logo" class="box-logo">
-            <div class="boxtitle">IGNITE</div>
-            <div class="details">
-              <div class="organizer box"><img src="img/organizer.svg" alt="" class="indice"><span>Ebec club</span></div>
-              <div class="location box"><img src="img/location.svg" alt="" class="indice"><span>ENSIA</span></div>
-              <div class="date box"><img src="img/date.svg" alt="" class="indice"><span>26 Oct 2024</span></div>
-            </div>
-            <a class="event-register" href="eventoverview.php">Join Now</a>
-          </div>
-          <div class="box-container">
-            <img src="img/clubs_logo/ebec.jpg" alt="logo" class="box-logo">
-            <div class="boxtitle">IGNITE</div>
-            <div class="details">
-              <div class="organizer box"><img src="img/organizer.svg" alt="" class="indice"><span>Ebec club</span></div>
-              <div class="location box"><img src="img/location.svg" alt="" class="indice"><span>ENSIA</span></div>
-              <div class="date box"><img src="img/date.svg" alt="" class="indice"><span>26 Oct 2024</span></div>
-            </div>
-            <a class="event-register" href="eventoverview.php">Join Now</a>
-          </div>
-          <div class="box-container">
-            <img src="img/clubs_logo/ebec.jpg" alt="logo" class="box-logo">
-            <div class="boxtitle">IGNITE</div>
-            <div class="details">
-              <div class="organizer box"><img src="img/organizer.svg" alt="" class="indice"><span>Ebec club</span></div>
-              <div class="location box"><img src="img/location.svg" alt="" class="indice"><span>ENSIA</span></div>
-              <div class="date box"><img src="img/date.svg" alt="" class="indice"><span>26 Oct 2024</span></div>
-            </div>
-            <a class="event-register" href="html/eventoverview.php">Join Now</a>
-          </div>
+        <form id="school-form">
 
-          
+            <select id="school-select" class="floating-select" required>
+            <option value=""></option>
+              <option value="0" >All</option>
+              <option value="1">ENSIA</option>
+              <option value="2">NHSM</option>
+              <option value="3">ENSSA</option>
+            </select>
+            <label for="school-select"  class="floating-label">School</label>
+            <button id="filter-btn"  style="position: relative; right: 3em;"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#4859a8" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg></div></button>
+          </form>
+
+        </div>
+        <div class="input-container">
+        <form id="club-form">
+
+            <select id="club-select" class="floating-select" required>
+            <option value=""></option>
+              <option value="0" >All</option>
+              <option value="21">tcha</option>
+              <option value="22">SKILL</option>
+            </select>
+            <label for="club-select" class="floating-label">Club</label>
+            <button id="filter-btn"  style="position: relative; right: 3em;"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#4859a8" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg></div></button>
+</form>
+        </div>
+        
+        <div class="input-container">
+        <form id="type-form">
+
+            <select id="type-select" class="floating-select" required>
+              <option value="" selected></option>
+              <option value="1">Hackathons</option>
+              <option value="2">Workshops</option>
+              <option value="0">Other</option>
+            </select>
+            <label for="type-select" class="floating-label">Type of event</label>
+            <button id="filter-btn"  style="position: relative; right: 3em;"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#4859a8" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg></div></button>
+            </form>
+
+        </div>
+        </div>
+
+        <div class="contents">   
         </div>
     </div>
-    </div>
+    <script>
+        window.eventData = <?php echo json_encode($eventss, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>;
+    </script>
+    <script src="../main/js/eventbox_entrance.js" defer></script>
+
     <?php include './footer.php'; ?>
 
 </body>
-<script>
-  document.querySelectorAll(".event-register").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.classList.add("clicked");
-      setTimeout(() => btn.classList.remove("clicked"), 300); // Remove after animation
-    });
-  });
-  
-</script>
 </html>

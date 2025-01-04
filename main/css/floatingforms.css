@@ -46,7 +46,6 @@
 }
 .otp{
     margin: 10px auto;
-    display: none;
 }
 .otpcode input{
     flex: 1;

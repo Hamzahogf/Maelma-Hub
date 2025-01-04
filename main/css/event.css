@@ -7,6 +7,7 @@ body{
     min-height: 100vh;
     width: 100%;
     background-color: #f1f3f8;
+    
 }
 html{
     scroll-behavior: smooth;
@@ -18,14 +19,14 @@ html{
     margin: 30px auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem; /* Adds space between items */
+    gap: 1rem; 
   }
   .container-teams {
     width: 100%;
     margin: 30px 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem; /* Adds space between items */
+    /*flex-wrap: wrap;*/
+    gap: 1rem; 
   }
 
   
@@ -34,7 +35,7 @@ html{
     background-color: white;
     border-radius: 10px;
     padding: 1.5rem 1.5rem;
-    height: 450px;
+    /*height: 450px;*/
     box-sizing: border-box;
     border: 1px solid #ddd;
     position: relative;
@@ -56,17 +57,21 @@ html{
 .teamcontainer{
     flex-grow: 1;
     width: 100%;
-    max-height: 240px; /* Limits height to 200px */
+    max-height: 240px;
     overflow-y: auto; /* Enables vertical scrolling */
     background-color: white;
     border-top: 1px solid #ccc;
 }
 .member{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    /*display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 0.5rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.8rem;*/
 }
 .name{
     font-size: 1.3rem;
@@ -75,6 +80,7 @@ html{
     text-align: left;
 }
 .role{
+    place-self: center; /* new */
     font-size: 0.8rem;
     color: white;
     width: max-content;
@@ -110,7 +116,7 @@ html{
     background-color: rgb(72, 89, 168);
     text-decoration: none;
     transition: 0.2s all ease;
-    margin: 40px auto;
+    margin: auto; /*margin: 40px auto;*/
 }
 .button:hover{
     transform: scale(1.1);
@@ -153,6 +159,9 @@ html{
     }
     .team {
       flex: 1 1 100%; /* Takes full width on small screens */
+    }
+    .container-teams{
+        display: block;
     }
   }
   @media (max-width: 1000px) {
