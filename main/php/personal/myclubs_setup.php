@@ -11,11 +11,11 @@ if($My_Connection->connect_error){
 
 $query= "SELECT s.school_name, c.club_name,c.club_photo, GROUP_CONCAT(sy.speci_name SEPARATOR ', ') AS specilities 
         FROM CLUB_MEMBER cm 
-        JOIN CLUB c ON cm.club_id = c.club_id 
-        JOIN USER u ON cm.member_id = u.user_id  
-        JOIN SCHOOL s ON s.school_id=c.club_school 
-        JOIN SPECIALITY_CLUB sp ON sp.club_id=c.club_id 
-        JOIN SPECIALITY sy ON sy.speci_id=sp.speci_id 
+        LEFT JOIN CLUB c ON cm.club_id = c.club_id 
+        LEFT JOIN USER u ON cm.member_id = u.user_id  
+        LEFT JOIN SCHOOL s ON s.school_id=c.club_school 
+        LEFT JOIN SPECIALITY_CLUB sp ON sp.club_id=c.club_id 
+        LEFT JOIN SPECIALITY sy ON sy.speci_id=sp.speci_id 
         WHERE cm.member_id= ? 
         GROUP BY c.club_id "
 ;

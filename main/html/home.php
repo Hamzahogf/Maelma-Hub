@@ -11,7 +11,7 @@
     <?php include '../php/events_setup.php'; ?>
     <?php include '../php/navbar_setup.php'; ?>
     <?php include '../php/events_setup.php'; ?>
-    
+    <?php include '../php/home_setup.php'; ?>
     <title>Maelma Hub</title>
 </head>
 <body>
@@ -47,7 +47,7 @@
         <div class="add-event">
             <h1>Join us and add your event now!</h1>
             <p>With this service you are able to add your hackathon, competition or event on the platform.</p>
-            <a href="html/Add_Event.php" class="button break">Add your event</a>
+            <a href="html/personal/Add_Event.php" class="button break">Add your event</a>
         </div>
         <div class="pic pic2"><img src="img/add_competition.svg" alt=""></div>
         </div>
@@ -59,18 +59,18 @@
         <div class="stat">
           <div class="stat-box">
             <img src="img/stat_icons/training.png" alt="" class="img-stat">
-            <h1 class="align-center">N/A</h1>
+            <h1 class="align-center"><?php echo $eventCount ?></h1>
             <p class="align-center">Events</p>
           </div>
           <div class="stat-box">
             <img src="img/stat_icons/training.png" alt="" class="img-stat">
-            <h1 class="align-center">N/A</h1>
-            <p class="align-center">Workshops</p>
+            <h1 class="align-center"><?php echo $clubCount ?></h1>
+            <p class="align-center">Clubs</p>
           </div>
           <div class="stat-box">
             <img src="img/stat_icons/training.png" alt="" class="img-stat">
-            <h1 class="align-center">N/A</h1>
-            <p class="align-center">Hackathons</p>
+            <h1 class="align-center"><?php echo $userCount ?></h1>
+            <p class="align-center">Users</p>
           </div>
         </div>
       

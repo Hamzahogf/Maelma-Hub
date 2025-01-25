@@ -118,15 +118,20 @@ if (team_eventsatElement) {
         var button = document.createElement('button')  
         button.classList.add('button')
         button.textContent = 'Send Invite'
+        button.innerHTML = 'Send Invite'
         button.type="submit"
         if(Object.keys(team).length==9 && team.status!=""){
             button.textContent = team.status
             if(team.status == "pending"){
               button.type="button"
+              button.disabled = true;
             }else if(team.status == "accepted"){
                 button.style.backgroundColor='green'
+                button.disabled = true;
+
             } else if (team.status == "rejected"){
                 button.style.backgroundColor='red'
+                button.disabled = true;
             }
         }
         form.appendChild(button)
@@ -136,7 +141,7 @@ if (team_eventsatElement) {
     }
 
     function main() {
-        teamsat_event.forEach(function (team) {
+        teamsat_event.forEach((team) => {
             build_team_event(team)
         });
     }

@@ -77,7 +77,7 @@
         window.eventData = <?php echo json_encode($eventss, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>;
     </script>
     <script src="../main/js/eventbox_entrance.js" defer></script>
-
+</div>
     <?php include './footer.php'; ?>
 
 </body>

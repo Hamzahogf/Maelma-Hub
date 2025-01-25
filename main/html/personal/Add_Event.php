@@ -10,7 +10,7 @@
         <script src="../../js/navbar.js" defer></script>
         <script src="../../js/dropdown.js" defer></script> 
         <script src="../../js/Form_validation.js" defer></script>
-        <?php session_start(); ?>
+        <?php include '../../php/personal/Add_Event_setup.php'?>
         <?php include '../../php/navbar_setup.php'; ?>
 
         <title>Add an Event</title>

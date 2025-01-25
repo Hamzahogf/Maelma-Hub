@@ -13,9 +13,9 @@ if ($My_Connection->connect_error) {
 
 $query = "SELECT c.club_name, c.club_photo, s.school_name, GROUP_CONCAT(sp.speci_name SEPARATOR ', ') AS specialities
           FROM CLUB c
-          JOIN SCHOOL s ON s.school_id = c.club_school
-          JOIN SPECIALITY_CLUB sc ON sc.club_id = c.club_id
-          JOIN SPECIALITY sp ON sp.speci_id = sc.speci_id";
+          LEFT JOIN SCHOOL s ON s.school_id = c.club_school
+          LEFT JOIN SPECIALITY_CLUB sc ON sc.club_id = c.club_id
+          LEFT JOIN SPECIALITY sp ON sp.speci_id = sc.speci_id";
 
 if (isset($_GET['school_id']) && !empty($_GET['school_id'])) {
     $school_id = $_GET['school_id'];

@@ -17,9 +17,9 @@ if (!isset($_SESSION['club_id'])) {
     
     $query = "SELECT u.club_name, u.club_photo,u.club_linkedin,  u.club_email, u.club_github, u.club_phone, u.start_date, s.school_name , GROUP_CONCAT(sp.speci_name SEPARATOR ', ') AS specialities 
     FROM CLUB u 
-    JOIN  SCHOOL s ON u.club_school = s.school_id 
-    JOIN speciality_club su ON u.club_id=su.club_id 
-    JOIN SPECIALITY sp ON sp.speci_id = su.speci_id 
+    LEFT JOIN  SCHOOL s ON u.club_school = s.school_id 
+    LEFT JOIN speciality_club su ON u.club_id=su.club_id 
+    LEFT JOIN SPECIALITY sp ON sp.speci_id = su.speci_id 
     WHERE u.club_id = ?
     GROUP BY u.club_id";
 

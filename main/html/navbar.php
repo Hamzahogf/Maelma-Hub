@@ -1,5 +1,5 @@
 <head>
-    <base href="http://localhost/BEHIND_THE_SCENES/main/">
+    <base href="/BEHIND_THE_SCENES/main/">
     <link rel="stylesheet" href="css/nav&foot.css">
 </head>
 

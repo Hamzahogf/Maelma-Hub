@@ -23,9 +23,9 @@ $query = "SELECT
     c.club_school as school_id,
     s.school_name
 FROM EVENT e
-JOIN CLUB c ON c.club_id = e.event_club
-JOIN SCHOOL s ON s.school_id = c.club_school
-JOIN EVENT_TYPE et ON et.type_id = e.type_event";
+LEFT JOIN CLUB c ON c.club_id = e.event_club
+LEFT JOIN SCHOOL s ON s.school_id = c.club_school
+LEFT JOIN EVENT_TYPE et ON et.type_id = e.type_event";
 
 // Add WHERE clauses based on filters
 $whereConditions = [];

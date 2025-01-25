@@ -10,8 +10,8 @@ if($My_connection->connect_error){
 
 $query="SELECT e.event_name , e.event_id , e.event_start_date, e.event_link , GROUP_CONCAT(sy.speci_name SEPARATOR ', ') AS specilities
         FROM EVENT e
-        JOIN SPECIALITY_EVENT se ON se.event_id = e.event_id
-        JOIN SPECIALITY sy ON sy.speci_id = se.speci_id 
+        LEFT JOIN SPECIALITY_EVENT se ON se.event_id = e.event_id
+        LEFT JOIN SPECIALITY sy ON sy.speci_id = se.speci_id 
         WHERE e.event_club = ?
         GROUP BY e.event_club" 
 ;

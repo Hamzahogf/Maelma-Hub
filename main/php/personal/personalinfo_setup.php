@@ -17,7 +17,7 @@ if(mysqli_connect_errno()){
     exit;
 }
 
-$query = "SELECT u.user_name, u.user_fullname, u.user_photo, u.user_email, u.user_github, u.user_phone, s.school_name , GROUP_CONCAT(sp.speci_name SEPARATOR ', ') AS specialities FROM USER u JOIN  SCHOOL s ON u.user_school = s.school_id JOIN SPECIALTY_USER su ON u.user_id=su.user_id JOIN SPECIALITY sp ON sp.speci_id = su.speci_id WHERE u.user_id = ? GROUP BY u.user_id";
+$query = "SELECT u.user_name, u.user_fullname, u.user_photo, u.user_email, u.user_github, u.user_phone, s.school_name , GROUP_CONCAT(sp.speci_name SEPARATOR ', ') AS specialities FROM USER u LEFT JOIN  SCHOOL s ON u.user_school = s.school_id LEFT JOIN SPECIALTY_USER su ON u.user_id=su.user_id LEFT JOIN SPECIALITY sp ON sp.speci_id = su.speci_id WHERE u.user_id = ? GROUP BY u.user_id";
 $stmt = $My_Connection->prepare($query);
 $stmt->bind_param('i', $_SESSION['user_id']);
 $stmt->execute();

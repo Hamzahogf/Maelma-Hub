@@ -13,10 +13,10 @@ if (isset($_GET['event_id'])) {
 
     $query="SELECT c.club_name ,c.club_photo, e.event_name, e.event_start_date, e.event_end_date, e.event_location , e.event_link ,e.event_max_num , e.event_price , p.partic_type , e.rang_team , GROUP_CONCAT(s.speci_name SEPARATOR ', ') AS specialities 
             FROM EVENT e 
-            JOIN CLUB c ON c.club_id = e.event_club 
-            JOIN PARTICIPANT p ON e.event_participant = p.partic_id 
-            JOIN SPECIALITY_EVENT se ON se.event_id = e.event_id 
-            JOIN speciality s ON s.speci_id = se.speci_id 
+            LEFT JOIN CLUB c ON c.club_id = e.event_club 
+            LEFT JOIN PARTICIPANT p ON e.event_participant = p.partic_id 
+            LEFT JOIN SPECIALITY_EVENT se ON se.event_id = e.event_id 
+            LEFT JOIN speciality s ON s.speci_id = se.speci_id 
             WHERE e.event_id = ? 
             GROUP BY e.event_id;"
     ;
@@ -37,8 +37,7 @@ if (isset($_GET['event_id'])) {
         WHERE it.member_id = ? AND it.team_id = t.team_id
              ) AS status, ";
     }
-    $query.="(SELECT GROUP_CONCAT(stt.num_demanded SEPARATOR ', ') 
-            FROM speciality_team stt 
+    $query.="(SELECT count(*) FROM team_member stt 
             WHERE stt.team_id = t.team_id) AS num_demanded,
             (SELECT GROUP_CONCAT(s.speci_name SEPARATOR ', ') 
             FROM speciality_team stt 

@@ -30,7 +30,7 @@ if($stmt->num_rows == 0){
     @$My_connection = new mysqli('localhost','root', '','maelma_hub',3306);
     $query=" INSERT INTO `EVENT` (`event_name`,`event_link`,`event_start_date`,`event_end_date`,`event_location`,`event_price`,`event_max_num`,`event_participant`,`event_club`,`rang_team`) VALUES (?,?,?,?,?,?,?,?,?,?)";
     $stmt=$My_connection->prepare($query);
-    $stmt->bind_param('sssssdiii' , $event_name,  $event_link, $event_start_date, $event_end_date, $event_location, $event_price, $event_max_num, $event_participant, $_SESSION['club_id'] , $event_team_rang);
+    $stmt->bind_param('ssssssisii' , $event_name,  $event_link, $event_start_date, $event_end_date, $event_location, $event_price, $event_max_num, $event_participant, $_SESSION['club_id'] , $event_team_rang);
     $stmt->execute();
     $event_id = $My_connection->insert_id;          // Retrieve the last inserted ID ; the insert_id property of the mysqli object after executing the statement
 

@@ -22,44 +22,7 @@
             <p style="margin: auto;">Keep an eye on everything that's happening in our technological pole </p>
           </div>
      <div class="news">
-            <div class="card">
-                <div class="block">
-                    <div class="left">
-                        <img src="img/blog/1672225598612.jpg" alt="description" width="100%" height="100%">
-                    </div>
-                  <div class="stmt">
-                    <div class="content">
-                        <h2>Mr Bachir Did it!!!</h2>
-                        <p>Mr Bachir promise us that on Mars you can make another strike, as ISE DEPT sent us on tuesday a -un-official mail that there will be no Master diploma neither fablab nor PFE.</p>
-                    </div>
-                    <div class="detailes">
-                            <p>by : Donald Trump</p>
-                            <p>5 comments</p>
-                            <p> 5/20/2024</p>
-                         <button class="join-btn">Read more</button>
-                    </div>
-                  </div>
-             </div> 
-            </div> 
-            <div class="card">
-                <div class="block">
-                    <div class="left">
-                        <img src="img/blog/blogsample.jpg" alt="description" width="100%" height="100%">
-                    </div>
-                    <div class="stmt">
-                    <div class="content">
-                        <h2>Strike in ENSIA</h2>
-                        <p>Students of the National School Of Artificial Intelligence are on a strike for their rights</p>
-                    </div>
-                    <div class="detailes">
-                            <p>by : Donald Trump</p>
-                            <p>5 comments</p>
-                            <p> 5/20/2024</p>
-                         <button class="join-btn">Read more</button>
-                    </div>
-                  </div>
-                </div>
-            </div>
+            
     </div>
     </div>
     <script>
@@ -67,5 +30,9 @@
     </script>  
     <?php include './footer.php'; ?>
     </body>
-    
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+    </style>
 </html>

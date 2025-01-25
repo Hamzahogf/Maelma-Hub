@@ -13,13 +13,13 @@ try {
 
 if (isset($_SESSION['user_id'])) {
 
-    $query = "SELECT user_photo FROM USER WHERE user_id = :user_id";
+    $query = "SELECT user_photo, user_fullname FROM USER WHERE user_id = :user_id";
     $stmt = $My_Connection->prepare($query);
     $stmt->bindParam(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
     $stmt->execute();
-    
-    $user_photo = $stmt->fetchColumn();
-
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $user_photo = $result['user_photo'];
+    $username = $result['user_fullname'];
     if (!empty($user_photo)) {
         $photo_src = 'data:image/jpeg;base64,' . base64_encode($user_photo);
     }

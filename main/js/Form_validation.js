@@ -6,6 +6,7 @@ var frm2=document.getElementsByClassName("frm2")[0]
 var frm3=document.getElementsByClassName("frm3")[0]
 var frm4=document.getElementsByClassName("frm4")[0]
 var frm5=document.getElementsByClassName("frm5")[0]
+var frm6=document.getElementsByClassName("frm6")[0]
 var passwdconditions = new Array(4).fill(false)
 var passwdconditionsmessages= new Array(4).fill("")
 var errmail = false
@@ -175,7 +176,12 @@ document.getElementById("submit-btn").onclick=function(event) {
                 frm5.submit();
             }, 1000); 
         }
-    }
+    }   if(frm6){
+        if(errpasswd){
+        setTimeout(function() {
+            frm5.submit();
+        }, 1000); 
+    }}
 }
 
 function ispasswd(password){ 

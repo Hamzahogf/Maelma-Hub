@@ -4,17 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost/BEHIND_THE_SCENES/main/css/event.css">
-    <link rel="stylesheet" href="http://localhost/BEHIND_THE_SCENES/main/css/Club_Card.css">
-    <script src="http://localhost/BEHIND_THE_SCENES/main/js/navbar.js" defer></script>
-    <script src="http://localhost/BEHIND_THE_SCENES/main/js/teamsat_event.js" defer></script>
+    <link rel="stylesheet" href="../css/event.css">
+    <link rel="stylesheet" href="../css/Club_Card.css">
+    <base href="/BEHIND_THE_SCENES/main/">
+    <script src="js/navbar.js" defer></script>
+    <script src="js/teamsat_event.js" defer></script>
     <?php include '../php/eventoverview_setup.php' ?>
     <?php include '../php/navbar_setup.php' ?>
+  
     <title>Event View</title>
 </head>
 <body>
 
-    <?php include './navbar.php'; ?>
+    <?php include 'navbar.php'; ?>
     
     <div class="main">
         <div class="card" style="margin-top: 10em; display:block; ">
@@ -31,7 +33,7 @@
             </div>
             <hr>
             <div class="icons">
-                <button class="join-btn" style="margin-left: 2em; width:5em;" onclick="window.location.href='<?php echo htmlspecialchars($event_link); ?>'">Join us</button>
+                <a class="join-btn" style="margin-left: 2em; width:5em;" href=<?php echo "html/personal/addteam.php?event_id=$event_id"?> onclick="window.location.href='<?php echo htmlspecialchars($event_link); ?>'">Join us</a>
                 <div class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/></svg>
                     <span class="icon-text"><?php echo htmlspecialchars($club_name) ?></span>
@@ -60,7 +62,6 @@
                 </div>
             </div>
         </div>
-        
         <div class="teams-container">
 
         </div>
@@ -68,7 +69,7 @@
 
     <input type="hidden" id="teamsat_event" value='<?php echo json_encode($teamsat_event, JSON_HEX_APOS | JSON_HEX_QUOT); ?>'>
 
-    <?php include './footer.php'; ?>
+    <?php include 'footer.php'; ?>
   
 </body>
 </html>

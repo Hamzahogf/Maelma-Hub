@@ -17,15 +17,15 @@ $query = " SELECT
         e.event_link
     FROM 
         TEAM_MEMBER tm
-    JOIN 
+    LEFT JOIN 
         TEAM t ON tm.team_id = t.team_id
-    JOIN 
+    LEFT JOIN 
         USER u ON tm.member_id = u.user_id
-    JOIN 
+    LEFT JOIN 
         SPECIALITY sp ON tm.team_member_speciality = sp.speci_id
-    JOIN 
+    LEFT JOIN 
         ROLE r ON tm.team_member_role = r.role_id
-    JOIN
+    LEFT JOIN
         EVENT e ON e.event_id=t.team_event
     WHERE 
         tm.team_id IN (
@@ -56,7 +56,6 @@ while ($stmt->fetch()) {
     ]
     );
 }
-
 $teamsat= implode(';', $teamsat);
 
 ?>
